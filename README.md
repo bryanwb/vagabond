@@ -29,7 +29,7 @@ $ gem install vagabond
 ## How does it work
 
 Currently, this is built to run within a classic Chef repository.
-It requires a `Vagabond` file, that simply outputs a Hash. The file
+It requires a `Vagabondfile` file, that simply outputs a Hash. The file
 is Ruby though, so you can do lots of crazy stuff to build the
 Hash you return. Heres a simple example:
 
@@ -55,7 +55,13 @@ Hash you return. Heres a simple example:
 Now, to create a node, simply run:
 
 ```
-$ vagabond up db
+$ sudo vagabond up db
+```
+
+If you use rvm, try
+
+```
+$ rvmsudo vagabond up db
 ```
 
 Pretty simple, right?
