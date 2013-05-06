@@ -135,8 +135,6 @@ touch ${rootfs_path}/etc/fstab
 # give us a console on /dev/console
 sed -i 's/ACTIVE_CONSOLES=.*$/ACTIVE_CONSOLES="\/dev\/console \/dev\/tty[1-4]"/' \
 ${rootfs_path}/etc/sysconfig/init
-# for some reason the bash package isn't installed the first time
-# so let's try again!
 chroot ${rootfs_path} yum -y install bash
 curl --retry 5 -L https://www.opscode.com/chef/install.sh | chroot ${rootfs_path} bash
  
